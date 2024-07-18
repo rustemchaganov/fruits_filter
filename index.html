@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>&#x1F34C;Экзотические фрукты</title>
+  </head>
+
+  <body>
+    <main>
+      <!-- ПАНЕЛЬ УПРАВЛЕНИЯ -->
+      <section class="panel__wrapper">
+        <h2 class="wrapper__title">⚙️ Панель управления</h2>
+
+        <div class="panel__devtools">
+          <button class="shuffle__btn line">Перемешать</button>
+
+          <div class="line">
+            <!-- пользователь указывает нижнюю границу weight -->
+            <div>min weight:</div>
+            <input class="minweight__input" />
+          </div>
+
+          <div class="line">
+            <!-- пользователь указывает верхнюю границу weight -->
+            <div>max weight:</div>
+            <input class="maxweight__input" />
+          </div>
+
+          <button class="filter__btn line">Фильтровать</button>
+
+          <div class="line">
+            <span>Алгоритм сортировки:</span>
+            <!-- TODO: указывается название алгоритма сортировки -->
+            <span class="sort__kind"></span>
+          </div>
+
+          <div class="line">
+            <span>Время сортировки: </span>
+            <!-- TODO: выводится время сортировки -->
+            <span class="sort__time"></span>
+          </div>
+
+          <!-- TODO: при нажатии происходит смена алгоритма сортировки -->
+          <button class="sort__change__btn line">Сменить алгоритм сортировки</button>
+
+          <!-- TODO: при нажатии происходит сортировка и рассчет времени сортировки -->
+          <button class="sort__action__btn line">Сортировать</button>
+
+          <!-- пользователь указывает значения характеристик будущего фрукта -->
+          <div class="line">
+            <div>kind:</div>
+            <input class="kind__input" />
+          </div>
+
+          <div class="line">
+            <div>color: <button class="show__colors">Посмотреть цвета</button></div>
+            <input class="color__input" />
+          </div>
+
+          <div class="line">
+            <div>weight(кг):</div>
+            <input class="weight__input" />
+          </div>
+
+          <!-- TODO: при нажатии новый фрукт добавляется в конец списка -->
+          <button class="add__action__btn line">Добавить фрукт</button>
+        </div>
+      </section>
+
+      <!-- СПИСОК ЭКЗОТИЧЕСКИХ ФРУКТОВ -->
+      <section class="fruits__wrapper">
+        <h2 class="wrapper__title">🥑 Список экзотических фруктов</h2>
+        <ul class="fruits__list">
+        </ul>
+        <div class="modal fail-sort">
+          <div class="modal__box fail-sort">
+            <p>Не перемешалось,всё на своих местах &#128579 </p>
+            <button id ="close-fail-sort-btn"> Ок</button>
+          </div>
+        </div>
+        <div class="modal show-colors">
+          <div class="modal__box show-colors">
+            <p>Вот варианты цветов &#127752: </p>
+            <div class="colors__example">фиолетовый : <div class="color__example1"></div></div>
+            <div class="colors__example">зеленый : <div class="color__example2"></div></div>
+            <div class="colors__example">желтый : <div class="color__example3"></div></div>
+            <div class="colors__example">черный : <div class="color__example4"></div></div>
+            <div class="colors__example">красный : <div class="color__example5"></div></div>
+            <div class="colors__example">оранжевый : <div class="color__example6"></div></div>
+            <div class="colors__example">синий : <div class="color__example7"></div></div>
+            <div> &#10071 при указании несуществующего\с ошбикой цвета, будет установлен стандартный черный</div>
+            <div><button id ="close-colors-sort-btn"> Ок</button></div>
+          </div>
+        </div>
+        <div class="modal fail-fruit-add">
+          <div class="modal__box fail-fruit-add">
+            <p>Проверьте значения,которые вы ввели &#129300</p>
+            <p>Цвет выберите из предложенного списка &#10071</p>
+            <p>Вес введите цифрами &#10071</p>
+            <p>Иначе ничего не выйдет &#129488</p>
+            <button id ="close-fail-fruit-add-btn"> Ок</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/popups.js"></script>
+  </body>
+</html>
